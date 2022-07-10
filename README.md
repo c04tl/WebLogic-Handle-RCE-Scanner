@@ -1,4 +1,4 @@
-# Escanners para CVE-2020-14882, CVE-2020-14883, CVE-202014750 de Oracle WebLogic
+# Escanners para CVE-2020-14882, CVE-2020-14883, CVE-2020-14750 de Oracle WebLogic
 
 Escanners en diferentes lenguajes para detectar estos CVE's en las consolas de administración de Oracle WebLogic a través de path traversal.
 
